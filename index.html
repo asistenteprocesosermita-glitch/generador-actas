@@ -549,11 +549,12 @@
                     }
                 };
                 const apiKey = "AIzaSyCMwOJDw0GAqifxAiqsA4M-UgBZvV5H0YM"; // Provided by environment
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-                if (!response.ok) { const errorBody = await response.text(); throw new Error(`API request failed: ${errorBody}`); }
                 const result = await response.json();
-                if (result.candidates?.[0]?.content?.parts?.[0]) { return JSON.parse(result.candidates[0].content.parts[0].text); }
+                let textResponse = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (textResponse) {
+                    textResponse = textResponse.replace(/```json|```/g, "").trim();
+                    return JSON.parse(textResponse);
+                }
                 throw new Error("La respuesta de la IA no tuvo el formato esperado.");
             }
 
@@ -661,3 +662,4 @@
 </body>
 
 </html>
+
