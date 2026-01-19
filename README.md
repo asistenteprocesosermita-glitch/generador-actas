@@ -1,2 +1,2 @@
-# generador-actas
-SE REALIZA GENERACION DE ACTAS DE REUNION EN LA EMPRESA XXXXXXXXX
+# GENERADOR DE ACTAS DE REUNION CLINICA LA ERMITA 
+El objetivo del acta de reunión es sistematizar de forma digital el uso y generación automática de registros oficiales para la Clínica La Ermita, optimizando la captura de datos mediante inteligencia artificial para garantizar que cada acuerdo, compromiso y decisión clínica sea documentada con precisión, agilidad y bajo los estándares de calidad exigidos, eliminando la transcripción manual y reduciendo el margen de error administrativo.
